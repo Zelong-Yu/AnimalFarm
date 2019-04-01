@@ -8,6 +8,7 @@ namespace Farm
         protected int _numLegs;
         protected string _species;
         protected int _value;
+        public static int numAnimals = 0;  //public shared field to keep track of how many animals are created
 
         public string Name { get => this._name; set => this._name = value; }
         public string Species { get => this._species; }
@@ -15,11 +16,12 @@ namespace Farm
         public Animal(string Name)
         {
             this._name = Name;
+            numAnimals++;
         }
 
         public virtual void Speak()
         {
-            Console.WriteLine($"I am {_name}");
+            Console.WriteLine($"I am {_name}. I am a {Species}. ");
         }
 
         public virtual void Eat()
@@ -27,6 +29,10 @@ namespace Farm
             Console.WriteLine("I eat food.");
         }
 
+        public virtual void Run()
+        {
+            Console.WriteLine($"{Species} {Name} tries to run with his {_numLegs} legs.");
+        }
 
         public int NumLegs()
         {
