@@ -68,10 +68,10 @@ namespace Farm
             Snowball.Speak();
 
             PromptForInput("Press any key to add another pig.          ");
-            Pig Napolean = new Pig("Napolean");
-            animals.Add(Napolean);
+            Pig Napoleon = new Pig("Napoleon");
+            animals.Add(Napoleon);
             PromptForInput("Press any key to let it speak.           ");
-            Napolean.Speak();
+            Napoleon.Speak();
 
             PromptForInput("Now press any key to let everyone speak                       ");
             foreach (var animal in animals)
@@ -94,7 +94,7 @@ namespace Farm
 
             }
 
-
+            
 
         }
 

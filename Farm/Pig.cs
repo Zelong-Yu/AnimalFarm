@@ -14,9 +14,10 @@ namespace Farm
             _numLegs = 4;
             _species = "Pig";
             //pig is "more equal" than any other animal
-            _value = 10;
+
             //well, this one pig is special...
-            if (Name == "Napoleon") _value = int.MaxValue;
+            if (Name.Equals("Napoleon")) { _value = int.MaxValue; }
+            else { _value = 10; }
             numPigs++;
             Console.WriteLine($"{Species} {Name} added.");
         }
@@ -36,6 +37,7 @@ namespace Farm
         public override void Speak()
         {
             Console.WriteLine($"Pig {_name} says \"Oink! All animals are equal!\"");
+            if (_name.Equals("Napoleon")) Console.WriteLine("But some animals are more equal! Oink!");
         }
 
         public override void Eat()
